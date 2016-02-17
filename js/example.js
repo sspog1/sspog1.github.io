@@ -164,7 +164,7 @@ function TodoController ($scope) {
 	 * pulls the current localStorage for example and stores it in localStorageArray
 	 */
 	$scope.refreash = function() {
-        $scope.localStorageArray = JSON.parse(localStorage.getItem(scope.localStoreName));
+        $scope.localStorageArray = JSON.parse(localStorage.getItem($scope.localStoreName));
 	};
 
 	/**
