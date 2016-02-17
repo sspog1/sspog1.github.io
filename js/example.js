@@ -1,8 +1,8 @@
 
 function TodoController ($scope,$sce) {
 
-//	$scope.localStoreName = 'example';	//Wee beastindependentie
-	$scope.localStoreName = 'codeAKilt';
+	$scope.localStoreName = 'example';	//Wee beastindependentie
+//	$scope.localStoreName = 'codeAKilt';
 	$scope.CLOSED_VERSUS_OPEN 	= 0;
 	$scope.RECOGNITION 			= 1;
 	$scope.TIME_BOXING 			= 2;
