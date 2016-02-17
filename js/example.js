@@ -191,7 +191,7 @@ function TodoController ($scope) {
 			}
 		}
 
-        localStorage.setItem(scope.localStoreName, JSON.stringify($scope.localStorageArray));
+        localStorage.setItem($scope.localStoreName, JSON.stringify($scope.localStorageArray));
 	   	this.refreash();
     };
 
