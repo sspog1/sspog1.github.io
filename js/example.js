@@ -156,8 +156,8 @@ function TodoController ($scope) {
 		}else{
 			$scope.localStorageArray.push( {id: ldId, ldName: ldName, text: $scope.textEntry, hasControl: $scope.hasControl} );
 		}
-		localStorage.setItem(scope.localStoreName, JSON.stringify($scope.localStorageArray));
-		$scope.localStorageArray = JSON.parse(localStorage.getItem(scope.localStoreName));
+		localStorage.setItem($scope.localStoreName, JSON.stringify($scope.localStorageArray));
+		$scope.localStorageArray = JSON.parse(localStorage.getItem($scope.localStoreName));
     };
 
 	/**
