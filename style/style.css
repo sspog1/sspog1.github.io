@@ -1,0 +1,52 @@
+table, th , td {
+    margin: auto;
+ //   border: 1px solid grey;
+
+    padding: 5px;
+}
+.headingBar {
+
+    width: 1000px;
+}
+
+.showDim{
+    padding:4px;
+    border: 1px solid grey;
+    margin-bottom: 5px;
+}
+.backPane{
+
+    width: 1000px;
+    margin: auto;
+}
+
+.btn  {
+    margin-bottom: 10px;
+}
+
+.navigation{
+    padding-left: 5px;
+    margin-top: 50px;
+    float:right;
+    width: 200px;
+}
+.menu{
+    width: 110px
+}
+.subMenu {
+    padding:5px;
+}
+
+.editPane{
+    width:800px;
+}
+.tableData{
+    text-align: left;
+    font-family: Helvetica;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-break: keep-all;
+    text-align: justify;
+}

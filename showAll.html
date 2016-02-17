@@ -1,0 +1,77 @@
+<!doctype html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+    <script src="js/example.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+</head>
+
+<body data-ng-app="">
+
+<a id="editNoteAnchor"></a>
+
+<div data-ng-controller="TodoController">
+<div class="backPane" ng-init="populateLd()">
+	<h1>{{ appTitle }}</h1>
+	<div>
+		<button style=" margin-top:0px;"
+				class="btn btn-success btn-lrg"
+				onclick="window.location.href='index.html'">
+			back to edit individal
+		</button>
+	</div>
+
+
+
+
+	<div ng-show="collapsed" class="editingPane">
+		<h2>{{ ldLoadedTitle }}</h2>
+		<label>I have control over this:
+			<input type="checkbox" data-ng-model="hasControl"  ng-change="addNote()">
+		</label>
+		<pre>{{ ldLoadedDescription   }}</pre>
+		<textarea style="width:100%;" rows="7" data-ng-model="textEntry" placeholder="Enter new ToDo item" ng-keyup="addNote()">
+		</textarea>
+		<a href="#" ng-init="collapsed=0" ng-model="collapsed" ng-click="collapsed=!collapsed" style="float:right"> [finished editing] </a>
+	</div>
+
+	
+	<div style="padding: 40px;">
+		<table width='100%' ng-intit="test()">
+	  	  <tr ng-repeat="name in localStorageArray track by $index">
+	   		 <td>
+				 <div style="height: 40px;">
+					 <h4 style="float:left">{{ name.ldName }}</h4>
+					 <a href="#"  ng-click="loadLdById( name.id )" style="float:left"> [edit] </a>
+				 </div>
+				 <div>
+					 <span ng-show="!name.hasControl" class="glyphicon glyphicon-remove"  style="color: red; margin-left: 15px; padding-right: 5px;">
+						this item is fixed
+					 </span>
+					 <span ng-show="name.hasControl" class="glyphicon glyphicon-ok"  style="color: green; margin-left: 15px; padding-right: 5px;">
+						I can control this
+					 </span>
+				 </div>
+			  <div class="showDim">
+				<pre>
+				  {{ '\n'+name.text }}
+				</pre>
+
+			  </div>
+		  </tr>
+		</table>
+	</div>
+
+	<button	type="button" class="btn btn-danger btn-xs" class="btn btn-default" ng-click="reset()">
+		clear all saved notes
+	</button>
+
+
+
+
+</div>
+</div>
+
+</body>
+</html>

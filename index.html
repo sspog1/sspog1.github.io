@@ -1,0 +1,109 @@
+<!doctype html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+    <script src="js/example.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+
+</head>
+
+<body data-ng-app="">
+
+<div data-ng-controller="TodoController">
+<div class="backPane" ng-init="populateLd()">
+
+	<a href="#" ng-init="collapsed=1" ng-model="collapsed" ng-click="collapsed=!collapsed" style="float:right"> [show/hide heading] </a>
+	<br>
+
+
+
+	<div  class="headingBar" ng-show="collapsed">
+		<div>
+			<h1>{{ appTitle }}</h1>
+		</div>
+		<div class="subHeading">
+			<p>The Learning Dimensions (LDs) bring together findings from the literature and new empirical work that can guide the creation of engaging learning experiences for computer programming. The aim is to provide a resource for computer science educators that can be used either in the design of new learning experiences or as a reflective toolkit for the review and improvement of existing learning experience. 
+			</p>
+			<p>
+				Click on the blue buttons down the right hand side to navigate through the different Learning Dimensions. A you do this you can make notes in the text area below as to how the LD might be applied in you leanring experiance desing. Once complete click the green 'view all desing decisions' button to see your notes collated. Every key press is saved imediatly so no work will be lost.
+			</p>
+			<p>~Chris Martin  
+<div>
+				<a href="https://twitter.com/sspog" class="twitter-follow-button" data-show-count="false">Follow @sspog<a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> 
+
+<a href="https://twitter.com/intent/tweet?screen_name=sspog" class="twitter-mention-button" data-related="sspog">Tweet to @sspog</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</div>
+	
+
+
+			<hr>
+		</div>
+	</div>
+
+	<div class="navigation">
+		<div class="menu">
+			<h6>Supporting info:</h6>
+			<div class="subMenu">
+				<button type="button" class="btn btn-default btn-xs" ng-click="loadLDbyIndex(DETAILS)">{{ ldData[DETAILS].title }}</button>
+			</div>
+		</div>
+		<div class="menu">
+			<h6>Design of activity:</h6>
+			<div class="subMenu">
+				<button type="button" class="btn btn-primary btn-xs" class="btn btn-default" ng-click="loadLDbyIndex(CLOSED_VERSUS_OPEN)">{{ ldData[CLOSED_VERSUS_OPEN].title }}</button>
+				<button type="button" class="btn btn-primary btn-xs" class="btn btn-default" ng-click="loadLDbyIndex(RECOGNITION)">{{ ldData[RECOGNITION].title }}</button>
+				<button type="button" class="btn btn-primary btn-xs" class="btn btn-default" ng-click="loadLDbyIndex(TIME_BOXING)">{{ ldData[TIME_BOXING].title }}</button>
+				<button type="button" class="btn btn-primary btn-xs" class="btn btn-default" ng-click="loadLDbyIndex(CULTURAL_RELEVANCE)">{{ ldData[CULTURAL_RELEVANCE].title }}</button>
+			</div>
+		</div>
+
+
+		<div class="subMenu">
+			<h6>Tempo or rhythm of session:</h6>
+			<div class="menu">
+				<button type="button" class="btn btn-primary btn-xs" class="btn btn-default" ng-click="loadLDbyIndex(RISK_AND_REWARD)">{{ ldData[RISK_AND_REWARD].title }}</button>
+				<button type="button" class="btn btn-primary btn-xs" class="btn btn-default" ng-click="loadLDbyIndex(DRIVER_SHIFTING)">{{ ldData[DRIVER_SHIFTING].title }}</button>
+			</div>
+		</div>
+
+		<div class="subMenu">
+			<h6>Practicalities:</h6>
+			<div class="menu">
+				<button type="button" class="btn btn-primary btn-xs" class="btn btn-default" ng-click="loadLDbyIndex(GROUPING)">{{ ldData[GROUPING].title }}</button>
+				<button type="button" class="btn btn-primary btn-xs" class="btn btn-default" ng-click="loadLDbyIndex(SESSION_SHAPE)">{{ ldData[SESSION_SHAPE].title }}</button>
+			</div>
+		</div>
+		<hr>
+		<div>
+			<button
+					class="btn btn-success btn-lrg"
+					onclick="window.location.href='showall.html'">
+				view all design decisions
+			</button>
+		</div>
+	</div>
+
+
+	<div class="editPane">
+		<h2>{{ ldLoadedTitle }}</h2>
+		<label>I have control over this:
+			<input type="checkbox" data-ng-model="hasControl"  ng-change="addNote()">
+		</label>
+		<pre>{{ ldLoadedDescription   }}</pre>
+
+		<a ng-show="ldData[loadedIndex].hasStructure;" ng-click="appendStructure()">[copy structure to note]</a>
+
+
+		<textarea style="width:100%; " rows="7" data-ng-model="textEntry" placeholder="Can I control this and how could it improve my lesson" ng-keyup="addNote()">
+		</textarea>
+
+	</div>
+</div>
+</div>
+</div>
+</body>
+</html>
