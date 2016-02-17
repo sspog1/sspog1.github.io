@@ -1,5 +1,5 @@
 
-function TodoController ($scope,$sce) {
+function TodoController ($scope) {
 
 	$scope.localStoreName = 'example';	//Wee beastindependentie
 //	$scope.localStoreName = 'codeAKilt';
