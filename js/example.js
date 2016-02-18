@@ -23,7 +23,7 @@ function TodoController ($scope) {
     $scope.ldData  = [
 		{ index:$scope.CLOSED_VERSUS_OPEN, 	id:"CL",title:"Closed versus Open",	description:"description", structure: "", hasStructure: false},
 		{ index:$scope.RECOGNITION, 		id:"RE",title:"Recognition",		description:"description", structure: "", hasStructure: false},
-		{ index:$scope.TIME_BOXING, 		id:"TB",title:"Time Boxing",		description:"description", structure: "", hasStructure: false},
+		{ index:$scope.TIME_BOXING, 		id:"SP",title:"Space to Play",		description:"description", structure: "", hasStructure: false},
 		{ index:$scope.CULTURAL_RELEVANCE, 	id:"CR",title:"Cultural Relevance",	description:"description", structure: "", hasStructure: false},
 		{ index:$scope.RISK_AND_REWARD, 	id:"RR",title:"Risk and Reward",	description:"description", structure: "", hasStructure: false},
 		{ index:$scope.DRIVER_SHIFTING, 	id:"DS",title:"Driver Shifting",	description:"description", structure: "", hasStructure: false},
@@ -256,7 +256,7 @@ function TodoController ($scope) {
 		+ "\n"
 		;
 
-	$scope.TIME_BOXING_DSC ="The Time Boxing dimension seeks to break down the traditional view of a teacher-learner relationship. It encapsulates the extent to which a learning experience offers and encourages learners to independently explore, experiment and iterate over aspects of the learning experience.  This idea is rooted in constructivist learning theory (Papert and Harel, 1991): learning takes place best when learners engage in project work that results in an artefact that is relevant to the learners further described in the Cultural Relevance LD. Time Boxing, however, addresses the fact that space and independence may be intimidating for certain learners. Furthermore, it acknowledges the tension between the learner as an individual  and a need to cover a particular amount of content with a group of learners. Where space can be intimidating, direction, constraint and facilitation can be catalysts to creativity and learning.\n"
+	$scope.TIME_BOXING_DSC ="The Space to Play dimension seeks to break down the traditional view of a teacher-learner relationship. It encapsulates the extent to which a learning experience offers and encourages learners to independently explore, experiment and iterate over aspects of the learning experience.  This idea is rooted in constructivist learning theory (Papert and Harel, 1991): learning takes place best when learners engage in project work that results in an artefact that is relevant to the learners further described in the Cultural Relevance LD. Time Boxing, however, addresses the fact that space and independence may be intimidating for certain learners. Furthermore, it acknowledges the tension between the learner as an individual  and a need to cover a particular amount of content with a group of learners. Where space can be intimidating, direction, constraint and facilitation can be catalysts to creativity and learning.\n"
 		+ "\n+Key stages"
 		+ "\n|-focal launch: bring the group together define the task well, answer questions "
 		+ "\n|-activity: set a visible timer and let the activity run"
@@ -277,12 +277,14 @@ function TodoController ($scope) {
 	;
 	$scope.CULTURAL_RELEVANCE_DSC =	"Often part of a learning experience involves creating a product of some kind, such as code or a sketch. The Cultural Relevance dimension considers where this product sits within the learner’s culture. It prompts consideration of whether or not the tasks they are engaged in authentic and relevant to their daily life experience. Ownership, personalisation and purpose are key aspects of creating a learning experience that will have high cultural relevance for the learner. If the learning experience is divorced from the world the learner inhabits, the cultural relevance will be low.\n"
 		+ "\n+Low cultural relevance"
-		+ "\n|-"
+		+ "\n|-inert and not related to the world your learner exists in "
 		+ "\n"
 
 
 		+ "\n+High cultural relevance:"
-		+ "\n|-"
+		+ "\n|-personlisation"
+		+ "\n|-ownershop"
+		+ "\n|-clear purpose"
 		+ "\n"
 	;
 	$scope.RISK_AND_REWARD_DSC ="The risk reward cycle considers the relationship between the investment of effort or risk that a learner undertakes and the reward when feedback is received. Investment of effort without confirmation that the correct actions are been taken by the learner are considered a risk. This is because they may result in wasted effort or even worse enforcing an incorrect understanding or application of a skill.\nFeedback can take a number of forms, such as observation and direction from a teacher or the completion of a complete program that can be executed. For example, this could be the time taken to write a hello world program. For Java, the amount of effort investment required from the learner to get the payback or reward of some text being displayed is non-trivial. In a language like Processing, the effort investment made by the learner before observable outcome is much shorter. In Processing and other scripting languages, it is possible to render output in one line of code. This programming effort is considered a risk to a learner, as when they move independently in a direction for a given period time before feedback is offered there is a chance they are moving in the wrong direction. In any learning experience, there will be a cycle of learner effort investment and pay off as the learner works through different tasks and received feedback as they progress.\n"
@@ -342,12 +344,14 @@ function TodoController ($scope) {
 	;
 	$scope.SESSION_SHAPE_DSC ="The physical environment encapsulates all elements of the space that learning takes place, including aspects such as the arrangement of tables and location of supporting visuals such as white boards or projectors. The physical environment is an important aspect of a learning experience. Currently as learners progress through nursery school, primary school, secondary school and on to Further and Higher Education, there is a notable shift in learning space design, from a flexible open activity specific space to the increasingly closed transmission-centred lecture theatre design. This correlates with a trend of increasing learner to teacher ratio and a perceived increased ‘efficiency’. As learners mature and their attention span increases, the ability to consume and assimilate lectures increases.  However there is a growing consensus [] that active learning is a powerful tool to engage learners and the use and design of learning space must reflect this. The physical environments involved in the studies and therefore reflected upon here are classroom, public space, computing lab and informal learning space. \n"
 		+ "\n+Low session shape"
-		+ "\n|-"
+		+ "\n|-do not modify the room lay out"
 		+ "\n"
 
 
 		+ "\n+High session shape:"
-		+ "\n|-"
+		+ "\n|-nests of tables for group work"
+		+ "\n|-focul point to draw focus if needed"
+		+ "\n|-is it easy to engage learners over the sholder if needed?"
 		+ "\n"
 	;
 
